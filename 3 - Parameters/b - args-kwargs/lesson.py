@@ -33,3 +33,7 @@ order3 = create_order("Alice", salad = 1)
 print(f"Order 1: {order1}")
 print(f"Order 2: {order2}")
 print(f"Order 3: {order3}")
+
+# Parameter order is strict
+def function(required, *args, default = 10, **kwargs):
+    pass
