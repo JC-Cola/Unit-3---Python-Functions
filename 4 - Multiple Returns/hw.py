@@ -1,19 +1,14 @@
 def search_user_database(query):
-    # 1. Empty or whitespace → (None, "No search query", False)
     if query is None or query.strip() == "":
         return None, "No search query", False
 
-    # 2. Invalid characters (not all letters) → (False, "Invalid characters", False)
     if not query.isalpha():  
         return False, "Invalid characters", False
 
-    # 3. Valid query — now simulate results:
-    # For simplicity: only "john" returns results
     if query == "john":
         count = 3
         return count, f"Found {count} users", True
 
-    # 4. Valid but no results
     return 0, "No users found", True
 
     
@@ -61,22 +56,13 @@ print(success) # True
 
 
 def analyze_book_pages(pages):
-    # 1. Handle empty list
     if len(pages) == 0:
         return 0, 0, 0.0, False
 
-    # 2. Total number of books
     count = len(pages)
-
-    # 3. Total pages
     total = sum(pages)
-
-    # 4. Average pages (float)
     avg = total / count
-
-    # 5. Any book strictly > 500?
     has_long = any(p > 500 for p in pages)
-
     return count, total, avg, has_long
 
 # TEST 1: Mixed collection with one long book
